@@ -9,6 +9,14 @@ module.exports = (app) => {
     // always logs the error
     console.error("ERROR", req.method, req.path, err);
 
+    // * Handling error jwt
+    if (err.name === "UnauthorizedError") {
+      res
+        .status(401)
+        .json({ errorMessage: "Invalid Token or there isn`t any Token" });
+      return;
+    }
+
     // only render if the error ocurred before sending the response
     if (!res.headersSent) {
       res.status(500).json({
