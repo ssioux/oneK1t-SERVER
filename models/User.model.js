@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, mongoose } = require("mongoose");
 
 const userSchema = new Schema(
   {
@@ -24,6 +24,11 @@ const userSchema = new Schema(
     lastName: {
       type: String,
       trim: true,
+    },
+    role: {
+      type: String,
+      enum: ["client", "admin"],
+      default: "client"
     },
     address: [
       {
