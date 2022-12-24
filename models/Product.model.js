@@ -9,29 +9,29 @@ const productSchema = new Schema(
       trim: true,
     },
     image: {
-        type: String,
-        required: [true, "Image is required."],
+      type: String,
+      required: [true, "Image is required."],
     },
     description: {
-        type: String,
-        trim: true,
+      type: String,
+      trim: true,
     },
     price: {
-        type: Number,
-        required: [true, "Price is required."],
-        trim: true,
+      type: Number,
+      required: [true, "Price is required."],
+      trim: true,
     },
     onSale: Boolean,
     salePrice: {
-        type: Number,
-        trim: true,
+      type: Number,
+      trim: true,
     },
     stock: Boolean,
     units: {
-        type: Number,
-        trim: true,
-        required: [true, "Units is required."],
-    }
+      type: Number,
+      trim: true,
+      required: [true, "Units is required."],
+    },
   },
   {
     timestamps: true,
@@ -39,4 +39,4 @@ const productSchema = new Schema(
 );
 
 const Product = model("Product", productSchema);
-module.exports = Product
+module.exports = Product;
