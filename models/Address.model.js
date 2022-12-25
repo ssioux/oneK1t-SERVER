@@ -18,7 +18,7 @@ const addressSchema = new Schema(
     },
     cp: {
       type: Number,
-      required: [true, "cp is required"],
+      required: [true, "Post Code is required"],
       trim: true,
     },
     town: {

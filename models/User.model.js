@@ -28,8 +28,14 @@ const userSchema = new Schema(
     role: {
       type: String,
       enum: ["client", "admin"],
-      default: "client"
+      default: "client",
     },
+    cart: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+      },
+    ],
     address: [
       {
         type: mongoose.Schema.Types.ObjectId,
